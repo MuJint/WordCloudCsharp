@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordCloudCsharp", "src\WordCloudCsharp\WordCloudCsharp.csproj", "{0AEF856A-B894-4D40-9CF3-2743F92D0753}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "test\TestProject\TestProject.csproj", "{356E883C-E551-4973-A7DB-C7F8863F4E94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AEF856A-B894-4D40-9CF3-2743F92D0753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEF856A-B894-4D40-9CF3-2743F92D0753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEF856A-B894-4D40-9CF3-2743F92D0753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEF856A-B894-4D40-9CF3-2743F92D0753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356E883C-E551-4973-A7DB-C7F8863F4E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356E883C-E551-4973-A7DB-C7F8863F4E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356E883C-E551-4973-A7DB-C7F8863F4E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356E883C-E551-4973-A7DB-C7F8863F4E94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C43D2BE-395C-4676-8CBD-700512E96EF8}
+	EndGlobalSection
+EndGlobal
