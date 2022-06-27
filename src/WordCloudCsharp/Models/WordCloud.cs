@@ -69,16 +69,5 @@ namespace WordCloudCsharp
         private string? _fontname;
 
         #endregion
-
-        #region private method
-        /// <summary>
-        /// Gets a random color.
-        /// </summary>
-        /// <returns>Color</returns>
-        private Color GetRandomColor()
-        {
-            return Color.FromArgb(Random.Next(0, 255), Random.Next(0, 255), Random.Next(0, 255));
-        }
-        #endregion
     }
 }
