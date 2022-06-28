@@ -4,6 +4,10 @@ using System.Drawing.Imaging;
 
 namespace WordCloudCsharp
 {
+    /// <summary>
+    /// Wordcloud Service
+    /// <para>词云实现接口</para>
+    /// </summary>
     public class WordcloudSrv : IWordcloud
     {
         #region disposable
