@@ -12,6 +12,7 @@
     <Authors>yuxin</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageTags>WordCloud;</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

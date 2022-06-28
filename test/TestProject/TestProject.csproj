@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image\heart.png" />
+    <None Remove="Image\test.png" />
     <None Remove="Resources\char_state_tab.json" />
     <None Remove="Resources\dict.txt" />
     <None Remove="Resources\idf.txt" />
@@ -21,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Image\heart.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Image\test.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\char_state_tab.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

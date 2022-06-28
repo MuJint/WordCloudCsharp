@@ -94,11 +94,11 @@ namespace TestProject
         [Fact]
         public void Test8()
         {
-            //imgMark need vaild black/white  ? 需要有效的黑或白蒙板图片
-            using var fileStream = new FileStream(@"C:\Users\86152\Desktop\1-21061PUH3.jpg", FileMode.Open);
+            //imgMark need vaild black/white  ? 需要有效的黑白蒙板图片
+            using var fileStream = new FileStream(@"Image/heart.png", FileMode.Open);
             var img = Image.FromStream(fileStream);
             using var images2 = ISingletion<WordcloudSrv>.Instance
-                 .GetWordCloud(580, 387, fontColor: Color.Pink, fontname: "kaiti", mask: img)
+                 .GetWordCloud(580, 387, fontname: "huawenxingkai", mask: img)
                  .Draw(words, feq);
             images2.Save($"D:\\foreach\\{Guid.NewGuid()}.png", ImageFormat.Png);
         }
@@ -143,7 +143,9 @@ namespace TestProject
 
             var service = provider.GetService<IWordcloud>();
 
-            var images = service.GetWordCloud(300, 300, true).Draw(wordKeys, ints);
+            using var fileStream = new FileStream(@"Image/heart.png", FileMode.Open);
+            var img = Image.FromStream(fileStream);
+            var images = service.GetWordCloud(800, 800, true, mask: img).Draw(wordKeys, ints);
             images.Save($"D:\\foreach\\{Guid.NewGuid()}.png", ImageFormat.Png);
         }
     }

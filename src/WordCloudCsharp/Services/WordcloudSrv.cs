@@ -55,7 +55,6 @@ namespace WordCloudCsharp
         /// <param name="mask">use mask image by generate wordcloud</param>
         /// <param name="allowVerical">If allow vertical drawing</param>
         /// <param name="fontname">fontname</param>
-        /// <param name="randomFontColor">every word use random color.</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         public WordCloud GetWordCloud(int width, int height, bool useRank = false, Color? fontColor = null, float maxFontSize = -1, int fontStep = 1, Image? mask = null, bool allowVerical = false, string? fontname = null)
