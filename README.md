@@ -2,7 +2,7 @@
 This project comes from another author.Wait to merge into the main line
 
 * [WordCloudSharp](https://github.com/AmmRage/WordCloudSharp)
-* ?Suspected fix GC problem, waiting for test
+* ?  Suspected fix GC problem, waiting for test
 
 # Ported Repository Info
 
@@ -14,7 +14,7 @@ This project is ported from a Codeplex hosted repository.
 
 # Install
 
-[![NuGet](https://img.shields.io/nuget/v/WordCloudSharp.svg)]()
+[![NuGet](https://img.shields.io/nuget/v/WordCloudCsharp.svg)](https://www.nuget.org/packages/WordCloudCsharp)
 
 # Usage
 * NameSpace ?命名空间
@@ -45,17 +45,3 @@ This project is ported from a Codeplex hosted repository.
     images.Save($"D:\\{Guid.NewGuid()}.png", ImageFormat.Png);
 ```
 for more details, please ref to the usage in UnitTest1. ?更多使用用例请查看 UnitTest1
-
-# Examples
-
-without mask: 
-
-![alt text][without]
-
-[without]: https://github.com/AmmRage/WordCloudSharp/blob/master/images/exmaple.jpg "without mask"
-
-with mask: 
-
-![alt text][with]
-
-[with]: https://github.com/AmmRage/WordCloudSharp/blob/master/images/example_with_mask.jpg "with mask"

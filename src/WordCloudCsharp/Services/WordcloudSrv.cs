@@ -46,15 +46,16 @@ namespace WordCloudCsharp
         /// <summary>
         /// <seealso cref="IWordcloud.GetWordCloud(int, int, bool, Color?, float, int, Image?, bool, string?)"/>
         /// </summary>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        /// <param name="useRank"></param>
-        /// <param name="fontColor"></param>
-        /// <param name="maxFontSize"></param>
-        /// <param name="fontStep"></param>
-        /// <param name="mask"></param>
-        /// <param name="allowVerical"></param>
-        /// <param name="fontname"></param>
+        /// <param name="width">width</param>
+        /// <param name="height">height</param>
+        /// <param name="useRank">User input order instead of frequency</param>
+        /// <param name="fontColor">fontColor</param>
+        /// <param name="maxFontSize">maxFontSize</param>
+        /// <param name="fontStep">Amount to decrement font size each time a word won't fit.</param>
+        /// <param name="mask">use mask image by generate wordcloud</param>
+        /// <param name="allowVerical">If allow vertical drawing</param>
+        /// <param name="fontname">fontname</param>
+        /// <param name="randomFontColor">every word use random color.</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         public WordCloud GetWordCloud(int width, int height, bool useRank = false, Color? fontColor = null, float maxFontSize = -1, int fontStep = 1, Image? mask = null, bool allowVerical = false, string? fontname = null)
@@ -63,7 +64,7 @@ namespace WordCloudCsharp
             {
                 MaxFontSize = maxFontSize < 0 ? height : maxFontSize,
                 FontStep = fontStep,
-                FontColor = fontColor ?? GetRandomColor(),
+                FontColor = fontColor,
                 UseRank = useRank,
                 Random = new Random(Environment.TickCount),
                 AllowVertical = allowVerical,
@@ -76,24 +77,13 @@ namespace WordCloudCsharp
             }
             else
             {
-                mask = WordcloudExtension.ResizeImage(mask, width, height);
-                if (!WordcloudExtension.CheckMaskValid(mask))
+                mask = mask.ResizeImage(width, height);
+                if (mask.CheckMaskValid() is false)
                     throw new Exception("Mask is not a valid black-white image");
                 wordCloud.Map = new OccupancyMap(mask);
                 wordCloud.WorkImage = new FastImage(mask);
             }
             return wordCloud;
         }
-
-        #region private method
-        /// <summary>
-        /// Gets a random color.
-        /// </summary>
-        /// <returns>Color</returns>
-        private Color GetRandomColor()
-        {
-            return Color.FromArgb(new Random().Next(0, 255), new Random().Next(0, 255), new Random().Next(0, 255));
-        }
-        #endregion
     }
 }

@@ -31,7 +31,7 @@ namespace WordCloudCsharp
         #region private method
         private void InitMask(FastImage image)
         {
-            Update(WordcloudExtension.CropImage(image), 1, 1);
+            Update(image.CropImage(), 1, 1);
         }
         #endregion
 

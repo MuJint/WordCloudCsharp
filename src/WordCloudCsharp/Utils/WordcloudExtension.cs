@@ -12,11 +12,11 @@ namespace WordCloudCsharp
 {
     public static class WordcloudExtension
     {
-        private static event Action<double> OnProgress;
+        private static event Action<double>? OnProgress;
 
         #region method
 
-        public static FastImage CropImage(FastImage img)
+        public static FastImage CropImage(this FastImage img)
         {
             var cropRect = new Rectangle(1, 1, img.Width - 1, img.Height - 1);
             var src = img.Bitmap;
@@ -38,7 +38,7 @@ namespace WordCloudCsharp
         /// <param name="width">The width to resize to.</param>
         /// <param name="height">The height to resize to.</param>
         /// <returns>The resized image.</returns>
-        public static Image ResizeImage(Image image, int width, int height)
+        public static Image ResizeImage(this Image image, int width, int height)
         {
             if (image.Width == width && image.Height == height)
                 return image;
@@ -81,7 +81,7 @@ namespace WordCloudCsharp
             return destImage;
         }
 
-        public static bool CheckMaskValid(Image mask)
+        public static bool CheckMaskValid(this Image mask)
         {
             bool valid;
             using (var bmp = new Bitmap(mask))
@@ -158,7 +158,10 @@ namespace WordCloudCsharp
             {
                 throw new ArgumentException("Must have the same number of words as frequencies.");
             }
-
+            if (wordCloud.WorkImage is null)
+                throw new ArgumentException("WorkImage is null.");
+            if(wordCloud.Map is null)
+                throw new ArgumentException("OccupancyMap is null.");
             Bitmap result;
             if (img == null)
                 result = new Bitmap(wordCloud.WorkImage.Width, wordCloud.WorkImage.Height);
@@ -212,8 +215,8 @@ namespace WordCloudCsharp
                     } while (fontSize > 0 && !foundPosition);
                     Debug.WriteLine("Found pos: " + p);
                     if (fontSize <= 0) break;
-                    gworking.DrawString(words[i], font, new SolidBrush(wordCloud.FontColor), p.X, p.Y, format);
-                    gresult.DrawString(words[i], font, new SolidBrush(wordCloud.FontColor), p.X, p.Y, format);
+                    gworking.DrawString(words[i], font, new SolidBrush(wordCloud.FontColor.Value), p.X, p.Y, format);
+                    gresult.DrawString(words[i], font, new SolidBrush(wordCloud.FontColor.Value), p.X, p.Y, format);
                     wordCloud.Map.Update(wordCloud.WorkImage, p.X, p.Y);
                 }
             }

@@ -6,8 +6,8 @@
     <PackageProjectUrl>https://github.com/MuJint/WordCloudCsharp</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/MuJint/WordCloudCsharp</RepositoryUrl>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1</FileVersion>
     <Description>c#生成词云</Description>
     <Authors>yuxin</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -15,6 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
     <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
