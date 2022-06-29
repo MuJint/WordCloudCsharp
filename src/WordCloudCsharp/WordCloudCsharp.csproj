@@ -6,13 +6,14 @@
     <PackageProjectUrl>https://github.com/MuJint/WordCloudCsharp</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/MuJint/WordCloudCsharp</RepositoryUrl>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>
     <Description>c#生成词云</Description>
     <Authors>yuxin</Authors>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageTags>WordCloud;</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

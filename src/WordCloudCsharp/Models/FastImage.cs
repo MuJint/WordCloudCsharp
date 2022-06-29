@@ -14,21 +14,50 @@ namespace WordCloudCsharp
 
         #region property
 
+        /// <summary>
+        /// Width
+        /// </summary>
         public int Width => Bitmap.Width;
 
+        /// <summary>
+        /// Height
+        /// </summary>
         public int Height => Bitmap.Height;
 
+        /// <summary>
+        /// PixelFormatSize
+        /// <para>像素格式化大小</para>
+        /// </summary>
         public int PixelFormatSize { get; set; }
 
+        /// <summary>
+        /// GCHandle
+        /// <para>gc handle</para>
+        /// </summary>
         public GCHandle Handle { get; set; }
 
+        /// <summary>
+        /// Stride
+        /// </summary>
         public int Stride { get; set; }
 
+        /// <summary>
+        /// data
+        /// </summary>
         public byte[] Data { get; set; }
 
+        /// <summary>
+        /// bitmap
+        /// </summary>
         public Bitmap Bitmap { get; set; }
         #endregion
 
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="format"></param>
         public FastImage(int width, int height, PixelFormat format)
         {
             PixelFormatSize = Image.GetPixelFormatSize(format) / 8;
@@ -40,6 +69,10 @@ namespace WordCloudCsharp
             Bitmap = new Bitmap(width, height, Stride, format, pData);
         }
 
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="image"></param>
         public FastImage(Image image) : this(image.Width, image.Height, image.PixelFormat)
         {
             var bmp = new Bitmap(image);
@@ -50,6 +83,10 @@ namespace WordCloudCsharp
 
         #region disposable
 
+        /// <summary>
+        /// dispose
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
@@ -68,12 +105,18 @@ namespace WordCloudCsharp
         }
 
         // // TODO: 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+        /// <summary>
+        /// the destructor
+        /// </summary>
         ~FastImage()
         {
             // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
             Dispose(disposing: false);
         }
 
+        /// <summary>
+        /// dispose
+        /// </summary>
         public void Dispose()
         {
             // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中

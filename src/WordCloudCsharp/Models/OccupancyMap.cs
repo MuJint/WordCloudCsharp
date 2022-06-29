@@ -4,13 +4,27 @@ using System.Drawing;
 
 namespace WordCloudCsharp
 {
+    /// <summary>
+    /// Occupancy Map
+    /// </summary>
     public class OccupancyMap : IntegralImage
     {
         private Random Rand { get; set; }
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="outputImgWidth"></param>
+        /// <param name="outputImgHeight"></param>
         public OccupancyMap(int outputImgWidth, int outputImgHeight) : base(outputImgWidth, outputImgHeight)
         {
             Rand = new Random(Environment.TickCount);
         }
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="mask"></param>
         public OccupancyMap(Image mask) : base(new FastImage(mask))
         {
             Rand = new Random(Environment.TickCount);
@@ -128,6 +142,14 @@ namespace WordCloudCsharp
             }
         }
 
+        /// <summary>
+        /// GetRandomUnoccupiedPosition
+        /// <para>得到闲置的point</para>
+        /// </summary>
+        /// <param name="strSizeX"></param>
+        /// <param name="strSizeY"></param>
+        /// <param name="p"></param>
+        /// <returns></returns>
         public bool GetRandomUnoccupiedPosition(int strSizeX, int strSizeY, out Point p)
         {
             var posList = new List<Point>();

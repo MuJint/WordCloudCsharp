@@ -13,6 +13,10 @@ namespace WordCloudCsharp
         #region disposable
 
         private bool disposedValue;
+        /// <summary>
+        /// dispose
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)
@@ -29,12 +33,18 @@ namespace WordCloudCsharp
         }
 
         // // TODO: 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+        /// <summary>
+        /// destructor
+        /// </summary>
         ~WordcloudSrv()
         {
             // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
             Dispose(disposing: false);
         }
 
+        /// <summary>
+        /// dispose
+        /// </summary>
         public void Dispose()
         {
             // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
@@ -44,7 +54,8 @@ namespace WordCloudCsharp
         #endregion
 
         /// <summary>
-        /// <seealso cref="IWordcloud.GetWordCloud(int, int, bool, Color?, float, int, Image?, bool, string?)"/>
+        /// get wordcloud object
+        /// <para>得到一个wordcloud操作对象</para>
         /// </summary>
         /// <param name="width">width</param>
         /// <param name="height">height</param>
@@ -55,7 +66,7 @@ namespace WordCloudCsharp
         /// <param name="mask">use mask image by generate wordcloud</param>
         /// <param name="allowVerical">If allow vertical drawing</param>
         /// <param name="fontname">fontname</param>
-        /// <returns></returns>
+        /// <returns><seealso cref="IWordcloud.GetWordCloud(int, int, bool, Color?, float, int, Image?, bool, string?)"/></returns>
         /// <exception cref="Exception"></exception>
         public WordCloud GetWordCloud(int width, int height, bool useRank = false, Color? fontColor = null, float maxFontSize = -1, int fontStep = 1, Image? mask = null, bool allowVerical = false, string? fontname = null)
         {
@@ -69,6 +80,8 @@ namespace WordCloudCsharp
                 AllowVertical = allowVerical,
                 Fontname = fontname,
             };
+
+            //now can use background
             if (mask == null)
             {
                 wordCloud.Map = new OccupancyMap(width, height);
@@ -76,6 +89,7 @@ namespace WordCloudCsharp
             }
             else
             {
+                //use mask.can't be used background
                 mask = mask.ResizeImage(width, height);
                 if (mask.CheckMaskValid() is false)
                     throw new Exception("Mask is not a valid black-white image");

@@ -9,6 +9,10 @@ namespace WordCloudCsharp
     public interface ISingletion<T> where T : class
     {
         private static T? _instance;
+        /// <summary>
+        /// get instance
+        /// <para>获取单例</para>
+        /// </summary>
         static T Instance
         {
             get

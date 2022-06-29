@@ -63,6 +63,9 @@ namespace WordCloudCsharp
         /// </summary>
 	    public bool AllowVertical { get; set; }
 
+        /// <summary>
+        /// fontname
+        /// </summary>
         public string? Fontname
         {
             get { return _fontname ?? "Microsoft Sans Serif"; }

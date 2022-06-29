@@ -41,7 +41,7 @@ namespace TestProject
         public void Test2()
         {
             using var images2 = ISingletion<WordcloudSrv>.Instance
-                 .GetWordCloud(200, 200, useRank: true)
+                 .GetWordCloud(1242, 768, useRank: true)
                  .Draw(words, feq);
             images2.Save($"D:\\foreach\\{Guid.NewGuid()}.png", ImageFormat.Png);
         }
@@ -145,8 +145,21 @@ namespace TestProject
 
             using var fileStream = new FileStream(@"Image/heart.png", FileMode.Open);
             var img = Image.FromStream(fileStream);
-            var images = service.GetWordCloud(800, 800, true, mask: img).Draw(wordKeys, ints);
+
+            var images = service.GetWordCloud(1242, 768, mask: img).Draw(wordKeys, ints);
             images.Save($"D:\\foreach\\{Guid.NewGuid()}.png", ImageFormat.Png);
+        }
+
+        [Fact]
+        public void TestBackgroundImg()
+        {
+#warning background and mask can't be used at the same time.the width of the background image is equal to the width of the input
+            //背景图片不能和蒙层同时使用。并且背景图片得宽高等于输入得宽高
+
+            var service = provider.GetService<IWordcloud>();
+            using var fileStream2 = new FileStream(@"C:\Users\86152\Desktop\background.png", FileMode.Open);
+            var img2 = Image.FromStream(fileStream2);
+            var images = service.GetWordCloud(1242, 766).Draw(words, feq, img: img2);
         }
     }
 }

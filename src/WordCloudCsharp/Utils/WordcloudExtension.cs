@@ -10,12 +10,20 @@ using System.Runtime.InteropServices;
 
 namespace WordCloudCsharp
 {
+    /// <summary>
+    /// wordcloud extension
+    /// </summary>
     public static class WordcloudExtension
     {
         private static event Action<double>? OnProgress;
 
         #region method
 
+        /// <summary>
+        /// fastimage extension CropImage
+        /// </summary>
+        /// <param name="img"><seealso cref="FastImage"/>FastImage</param>
+        /// <returns><seealso cref="FastImage"/></returns>
         public static FastImage CropImage(this FastImage img)
         {
             var cropRect = new Rectangle(1, 1, img.Width - 1, img.Height - 1);
@@ -81,6 +89,11 @@ namespace WordCloudCsharp
             return destImage;
         }
 
+        /// <summary>
+        /// check mask is valid
+        /// </summary>
+        /// <param name="mask">the mask image</param>
+        /// <returns>bool</returns>
         public static bool CheckMaskValid(this Image mask)
         {
             bool valid;
@@ -95,10 +108,12 @@ namespace WordCloudCsharp
             }
             return valid;
         }
+
         /// <summary>
         /// generate image
         /// <para>生成图片</para>
         /// </summary>
+        /// <param name="wordCloud"></param>
         /// <param name="words">List of words ordered by occurance.</param>
         /// <param name="freqs">List of frequecies.</param>
         /// <returns>Image of word cloud.</returns>
@@ -109,7 +124,9 @@ namespace WordCloudCsharp
 
         /// <summary>
         /// Draws the specified word cloud with background color spicified given list of words and frequecies
+        /// <para>生成图片自定义背景颜色</para>
         /// </summary>
+        /// <param name="wordCloud"></param>
         /// <param name="words">List of words ordered by occurance.</param>
         /// <param name="freqs">List of frequecies.</param>
         /// <param name="bgcolor">Specified background color</param>
@@ -121,7 +138,9 @@ namespace WordCloudCsharp
 
         /// <summary>
         /// Draws the specified word cloud with background spicified given list of words and frequecies
+        /// <para>根据背景图片生成词云图片</para>
         /// </summary>
+        /// <param name="wordCloud"></param>
         /// <param name="words">List of words ordered by occurance.</param>
         /// <param name="freqs">List of frequecies.</param>
         /// <param name="img">Specified background image</param>
@@ -137,6 +156,7 @@ namespace WordCloudCsharp
         /// <summary>
         /// Draws the specified word cloud given list of words and frequecies
         /// </summary>
+        /// <param name="wordCloud"></param>
         /// <param name="words">List of words ordered by occurance.</param>
         /// <param name="freqs">List of frequecies.</param>
         /// <param name="bgcolor">Backgroud color of the output image</param>
