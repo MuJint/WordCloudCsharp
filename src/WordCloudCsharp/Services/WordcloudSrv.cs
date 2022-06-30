@@ -63,9 +63,10 @@ namespace WordCloudCsharp
         /// <param name="fontColor">fontColor</param>
         /// <param name="maxFontSize">maxFontSize</param>
         /// <param name="fontStep">Amount to decrement font size each time a word won't fit.</param>
-        /// <param name="mask">use mask image by generate wordcloud</param>
+        /// <param name="mask">use mask image by generate wordcloud.</param>
         /// <param name="allowVerical">If allow vertical drawing</param>
         /// <param name="fontname">fontname</param>
+        /// <remarks>if use mask can't be used background imgae.如果使用了蒙层将不能使用背景图片</remarks>
         /// <returns><seealso cref="IWordcloud.GetWordCloud(int, int, bool, Color?, float, int, Image?, bool, string?)"/></returns>
         /// <exception cref="Exception"></exception>
         public WordCloud GetWordCloud(int width, int height, bool useRank = false, Color? fontColor = null, float maxFontSize = -1, int fontStep = 1, Image? mask = null, bool allowVerical = false, string? fontname = null)

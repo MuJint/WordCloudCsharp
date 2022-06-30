@@ -143,7 +143,8 @@ namespace WordCloudCsharp
         /// <param name="wordCloud"></param>
         /// <param name="words">List of words ordered by occurance.</param>
         /// <param name="freqs">List of frequecies.</param>
-        /// <param name="img">Specified background image</param>
+        /// <param name="img">Specified background image.</param>
+        /// <remarks>if use background image can't be used mask.如果使用了背景图片将不能使用蒙层</remarks>
         /// <returns>Image of word cloud.</returns>
         public static Image Draw(this WordCloud wordCloud, IList<string> words, IList<int> freqs, Image img)
         {
