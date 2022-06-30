@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image\background.png" />
     <None Remove="Image\heart.png" />
     <None Remove="Image\test.png" />
     <None Remove="Resources\char_state_tab.json" />
@@ -23,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Image\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Image\heart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
