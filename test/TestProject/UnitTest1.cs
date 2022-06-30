@@ -157,7 +157,7 @@ namespace TestProject
             //背景图片不能和蒙层同时使用。并且背景图片得宽高等于输入得宽高
 
             var service = provider.GetService<IWordcloud>();
-            using var fileStream2 = new FileStream(@"C:\Users\86152\Desktop\background.png", FileMode.Open);
+            using var fileStream2 = new FileStream(@"Image/background.png", FileMode.Open);
             var img2 = Image.FromStream(fileStream2);
             var images = service.GetWordCloud(1242, 766).Draw(words, feq, img: img2);
         }
